@@ -3,6 +3,7 @@
 export(sclink_cor)
 export(sclink_net)
 export(sclink_norm)
+importFrom(glasso,glasso)
 importFrom(parallel,mclapply)
 importFrom(stats,cor)
 importFrom(stats,dgamma)

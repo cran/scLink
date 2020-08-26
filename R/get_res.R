@@ -61,8 +61,9 @@ est_pearson_scimpute.c = function(count, cor.p, thre_no = 20,
 get_res_wGL_quic = function(covobs, weights, genes, nobs, l1, ncores){
   theta_list = mclapply(l1, function(lda){
     message(paste0("lambda = ", lda))
-    res = QUIC::QUIC(covobs, rho = lda * weights, msg = 0)
-    X = res$X
+    #res = QUIC(covobs, rho = lda * weights, msg = 0)
+    res = glasso(covobs, rho=lda * weights)
+    X = res$wi
     rownames(X) = colnames(X) = genes
     return(X)
   }, mc.cores = ncores)

@@ -12,7 +12,7 @@
 
 <meta name="author" content="Wei Vivian Li, Rutgers Department of Biostatistics and Epidemiology" />
 
-<meta name="date" content="2020-07-26" />
+<meta name="date" content="2020-08-14" />
 
 <title>Introduction to scLink</title>
 
@@ -95,7 +95,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Introduction to scLink</h1>
 <h4 class="author">Wei Vivian Li, Rutgers Department of Biostatistics and Epidemiology</h4>
-<h4 class="date">2020-07-26</h4>
+<h4 class="date">2020-08-14</h4>
 
 
 
@@ -103,6 +103,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Here we demonstrate the functionality of <code>scLink</code> using the example data stored in the package.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(scLink)</code></pre></div>
 <pre><code>## Loading required package: parallel</code></pre>
+<pre><code>## Loading required package: glasso</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">count =<span class="st"> </span><span class="kw">readRDS</span>(<span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;example.rds&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;scLink&quot;</span>))
 genes =<span class="st"> </span><span class="kw">readRDS</span>(<span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;genes.rds&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;scLink&quot;</span>))</code></pre></div>
 <p>The example raw count matrix <code>count</code> has 793 <strong>rows</strong> representing different cells and 23,341 <strong>columns</strong> representing different genes. <code>genes</code> is a character vector of 500 genes of interest.</p>

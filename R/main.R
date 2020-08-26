@@ -94,6 +94,7 @@ sclink_cor = function(expr, ncores, nthre = 20, dthre = 0.9){
 #' @export
 #' @importFrom parallel mclapply
 #' @importFrom stats cor dgamma dnorm pchisq sd uniroot
+#' @importFrom glasso glasso
 #' @author Wei Vivian Li, \email{vivian.li@rutgers.edu}
 #' @examples
 #' \donttest{
@@ -106,9 +107,9 @@ sclink_net = function(expr, ncores, lda = seq(1, 0.1, -0.05),
   if(ncol(expr) > 1000){warning("For large expression matrix, \n
                                  computation may take a long time. \n
                                  Consider first using the scLink_cor function to check correlation structures.")}
-  if(!requireNamespace("QUIC", quietly=TRUE)){
-    stop("Please make sure the package QUIC is installed!")  # message optional
-  }
+  # if(!requireNamespace("QUIC", quietly=TRUE)){
+  #   stop("Please make sure the package QUIC is installed!")  # message optional
+  # }
   cor_pearson = cor(expr)
   x.q = apply(expr, 2, sd)
   cor_pearson.c = est_pearson_scimpute.c(expr, ncores = ncores, cor.p = cor_pearson,
